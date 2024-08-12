@@ -1,0 +1,110 @@
+
+* общие стили */
+   *  {
+ 
+ margin: 0;
+ 
+} 
+body {
+		      height: 600px;
+              margin:0  auto;
+              width: 50%;
+              background-color: #0B1D26;
+              overflow-x:hidden;
+		      color: #fff;
+		      font-size: 25px;
+		      font-family: Gilroy;
+		      font-weight: 500;
+                
+}					 
+.den_mes_god    {
+              position: relative;
+	          top: 0px;
+	          left: 100px;
+		      display: block;
+		      width: 70px;
+		      height: 60px;
+		      font-size: 15px;
+              line-height: 0px			  
+}
+.den_mes    {
+              position: absolute;
+	          top: 0px;
+	          left: 30px;
+			  display: block;
+			  width: 45px;
+			  height: 60px;
+              line-height: 0px;
+			  
+			  
+}
+.den_mes2    {
+              position: absolute;
+			  display: block;
+	          top: 0px;
+	          left: 75px;
+			  width: 55px;
+			  height: 60px;
+			  line-height: 0px;
+			  
+}
+
+.den_mes3    {
+              position: absolute;
+			  display: block;
+	          top: 0px;
+	          left: 140px;
+			  width: 45px;
+			  height: 60px;
+			  line-height: 0px;
+			  
+}
+.den_mes4    {
+              position: absolute;
+			  display: block;
+	          top: 0px;
+	          left: 183px;
+			  width: 55px;
+			  height: 60px;
+			  line-height: 0px;
+			  
+}
+.den_mes5    {
+              position: absolute;
+			  display: block;
+	          top: 0px;
+	          left: 248px;
+			  width: 45px;
+			  height: 60px;
+			  line-height: 0px;
+}
+.den_mes6    {
+              position: absolute;
+			  display: block;
+	          top: 0px;
+	          left: 295px;
+			  width: 45px;
+			  height: 60px;
+			  line-height: 0px;
+			  
+}
+.den_mes7    {
+              position: absolute;
+			  display: block;
+	          top: 0px;
+	          left: 342px;
+			  width: 45px;
+			  height: 60px;
+			  line-height: 0px;
+			  
+}
+.den_mes8    {
+              position: absolute;
+			  display: block;
+	          top: 0px;
+	          left: 385px;
+			  width: 45px;
+			  height: 60px;
+			  line-height: 0px;
+			  
+}			  

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Преобразование чисел</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+ 
+    <fieldset>  
+		<legend>Введите день рождения, месяц и год</legend>
+        <label>День:</button><br>
+		 <input id="inpDen" value=09><br />
+		
+		<label>Месяц:<br />
+		 <input id="inpMes" value=05><br />
+		 
+		 <label>Год:<br />
+		 <input  id="inpGod" value=2001></label><br />
+		 
+		 <button onClick="submit()">Результат </button>
+ 		 
+	<hr>
+  <div class="rezultat">	
+		<p id="rezd"></p>
+		<p id="rezg"></p>
+		<p id="reza"></p>
+  </div>		
+<div class="den_mes_god"> 	
+     <div class="den_mes"> 
+	    <p id="str10"></p>
+		<p id="str11"></p>
+		<p id="str12"></p>
+	    <p id="str13"></p>
+		<p id="str14"></p>
+	 </div>
+	 
+
+	<div class="den_mes2"> 
+	    <p id="str20"></p>
+		<p id="str21"></p>
+		<p id="str22"></p>
+	    <p id="str23"></p>
+		<p id="str24"></p>
+	 </div>
+ 
+	 
+<div class="den_mes3"> 
+	    <p id="str30"></p>
+		<p id="str31"></p>
+		<p id="str32"></p>
+	    <p id="str33"></p>
+		<p id="str34"></p>		
+	 </div>
+<div class="den_mes4"> 
+	    <p id="str40"></p>
+		<p id="str41"></p>
+		<p id="str42"></p>
+	    <p id="str43"></p>
+		<p id="str44"></p>
+	 </div>
+<div class="den_mes5"> 
+	    <p id="str50"></p>
+		<p id="str51"></p>
+		<p id="str52"></p>
+	    <p id="str53"></p>
+		<p id="str54"></p>
+	 </div>
+<div class="den_mes6"> 
+	    <p id="str60"></p>
+		<p id="str61"></p>
+		<p id="str62"></p>
+	    <p id="str63"></p>
+		<p id="str64"></p>
+	 </div>
+<div class="den_mes7"> 
+	    <p id="str70"></p>
+		<p id="str71"></p>
+		<p id="str72"></p>
+	    <p id="str73"></p>
+		<p id="str74"></p>
+	 </div>	
+<div class="den_mes8"> 
+	    <p id="str80"></p>
+		<p id="str81"></p>
+		<p id="str82"></p>
+	    <p id="str83"></p>
+		<p id="str84"></p>
+	 </div>
+</div>	 
+ </fieldset> 	
+	<script>  
+           function submit(){
+           var a=document.getElementById("inpGod");
+		   var g=a.value;
+		   var b=document.getElementById("inpMes");
+		   var m=b.value;
+		   var mc=b.value;
+		   m=m-1;
+		   var c=document.getElementById("inpDen");
+		   var d=c.value;
+           
+			if(((g%4===0)&& (g%100!=0)) || (g%400==0))
+		      { 
+			  var rez=("год високосный")
+			   }
+			   else
+			   {
+			  var rez=("год невисокосный")
+			    }
+		   const date1= new Date(g, m, d);
+		   
+		   var n = date1.getDay();
+		   
+		  
+		  var days = [
+		   'Воскресенье',
+		   'Понедельник',
+		   'Вторник',
+		   'Среда',
+		   'Четверг',
+		   'Пятница',
+		   'Суббота'
+		   ];
+		   
+		   var den=days[n];
+		   
+		   
+		   
+		   var tg = new Date().getFullYear();
+		   var tm = new Date().getMonth();
+		   var td = new Date().getDate();
+		   
+		   tm=tm+1
+		   m=m+1
+		   age=tg-g;
+		    
+		  if((tg>=g) && (tm<m))
+		      {
+		   age=age-1		   
+			   }
+		 if(((tg>=g) && (tm=m)) && (td<=d))
+			 {  
+		   age=age-1  
+		     }
+			   
+		
+		var html = 'день недели: ' + den  + ';';		  
+		document.getElementById('rezd').innerHTML=html;
+		 var html = rez + ';';
+		 document.getElementById('rezg').innerHTML=html;
+		 var html = 'возраст: ' + ' полных лет - ' + age + '.';
+		 document.getElementById('reza').innerHTML=html;     	 
+		
+		      
+		   var strd=String(d);
+		   var strm=String(mc); 
+		   var strg=String(g);
+
+				 
+		var	 cifd = Array.from(strd);
+		var	 cifm = Array.from(strm);
+		var	 cifg = Array.from(strg);
+		
+			      
+       
+       let A0=['***', '*&nbsp&nbsp*',
+          '*&nbsp&nbsp*', '*&nbsp&nbsp*', '***'];
+       let A1=['&nbsp&nbsp&nbsp*', '&nbsp&nbsp&nbsp*', '&nbsp&nbsp&nbsp*',
+       '&nbsp&nbsp&nbsp*', '&nbsp&nbsp&nbsp*', ];				
+	   let A2=['***', '&nbsp&nbsp&nbsp&nbsp*', '***',
+             '*&nbsp&nbsp&nbsp', '***'];
+	   let A3=['***', '&nbsp&nbsp&nbsp&nbsp*', '***',
+                '&nbsp&nbsp&nbsp&nbsp*', '***'];
+	   let A4=['*&nbsp&nbsp*', '*&nbsp&nbsp*', '***',
+                '&nbsp&nbsp&nbsp&nbsp*', '&nbsp&nbsp&nbsp&nbsp*'];		
+	   let A5=['***', '*&nbsp&nbsp', '***',
+                '&nbsp&nbsp&nbsp&nbsp*', '***'];
+	   let A6=['***', '*&nbsp&nbsp', '***', '*&nbsp&nbsp*',
+                '*&nbsp&nbsp*', '***'];	
+       let A7=['***', '&nbsp&nbsp&nbsp&nbsp*', '&nbsp&nbsp&nbsp&nbsp*',
+               '&nbsp&nbsp&nbsp&nbsp*','&nbsp&nbsp&nbsp&nbsp*'];		
+	   let A8=['&nbsp**&nbsp', '*&nbsp&nbsp*', '&nbsp**&nbsp',
+               '*&nbsp&nbsp*', '&nbsp**&nbsp'];		
+       let A9=['***', '*&nbsp&nbsp*', '***',
+               '&nbsp&nbsp&nbsp&nbsp*', '***'];
+               	   		
+		if(cifd[0]==0)
+			{	
+		 document.getElementById('str10').innerHTML=A0[0];		   
+		 document.getElementById('str11').innerHTML=A0[1];			 
+		 document.getElementById('str12').innerHTML=A0[2];		   		  			 
+		 document.getElementById('str13').innerHTML=A0[3];  			 
+		 document.getElementById('str14').innerHTML=A0[4];	
+		     }
+		
+		 if(cifd[0]==1)
+			{	
+		 document.getElementById('str10').innerHTML=A1[0];		   
+		 document.getElementById('str11').innerHTML=A1[1];			 
+		 document.getElementById('str12').innerHTML=A1[2];		   		  			 
+		 document.getElementById('str13').innerHTML=A1[3];  			 
+		 document.getElementById('str14').innerHTML=A1[4];	
+		     }
+		if(cifd[0]==2)
+			{	
+		 document.getElementById('str10').innerHTML=A2[0];		   
+		 document.getElementById('str11').innerHTML=A2[1];			 
+		 document.getElementById('str12').innerHTML=A2[2];		   		  			 
+		 document.getElementById('str13').innerHTML=A2[3];  			 
+		 document.getElementById('str14').innerHTML=A2[4];	
+		     }
+		 if(cifd[0]==3)
+			{	
+		 document.getElementById('str10').innerHTML=A3[0];		   
+		 document.getElementById('str11').innerHTML=A3[1];			 
+		 document.getElementById('str12').innerHTML=A3[2];		   		  			 
+		 document.getElementById('str13').innerHTML=A3[3];  			 
+		 document.getElementById('str14').innerHTML=A3[4];	
+		     }
+		dop0=A0[4] + "&nbsp&nbsp&nbsp*";  
+		if(cifd[1]==0)
+			{	
+		 document.getElementById('str20').innerHTML=A0[0];		   
+		 document.getElementById('str21').innerHTML=A0[1];			 
+		 document.getElementById('str22').innerHTML=A0[2];		   		  			 
+		 document.getElementById('str23').innerHTML=A0[3];  			 
+		 document.getElementById('str24').innerHTML=dop0;	
+		     }	 
+        dop1=A1[4] + "&nbsp&nbsp&nbsp*";  
+		if(cifd[1]==1)
+			{	
+		 document.getElementById('str20').innerHTML=A1[0];		   
+		 document.getElementById('str21').innerHTML=A1[1];			 
+		 document.getElementById('str22').innerHTML=A1[2];		   		  			 
+		 document.getElementById('str23').innerHTML=A1[3];  			 
+		 document.getElementById('str24').innerHTML=dop1;	
+		     }
+		dop2=A2[4] + "&nbsp&nbsp&nbsp*";	 
+		 if(cifd[1]==2)
+			{	
+		 document.getElementById('str20').innerHTML=A2[0];		   
+		 document.getElementById('str21').innerHTML=A2[1];			 
+		 document.getElementById('str22').innerHTML=A2[2];		   		  			 
+		 document.getElementById('str23').innerHTML=A2[3];  			 
+		 document.getElementById('str24').innerHTML=dop2;	
+		     }
+         dop3=A3[4] + "&nbsp&nbsp&nbsp*"; 
+		if(cifd[1]==3)
+			{	
+		 document.getElementById('str20').innerHTML=A3[0];		   
+		 document.getElementById('str21').innerHTML=A3[1];			 
+		 document.getElementById('str22').innerHTML=A3[2];		   		  			 
+		 document.getElementById('str23').innerHTML=A3[3];  			 
+		 document.getElementById('str24').innerHTML=dop3;	
+		     }
+		dop4=A4[4] + "&nbsp&nbsp&nbsp*";	 
+         if(cifd[1]==4)
+			{	
+		 document.getElementById('str20').innerHTML=A4[0];		   
+		 document.getElementById('str21').innerHTML=A4[1];			 
+		 document.getElementById('str22').innerHTML=A4[2];		   		  			 
+		 document.getElementById('str23').innerHTML=A4[3];  			 
+		 document.getElementById('str24').innerHTML=dop4;	
+		     }
+		dop5=A5[4] + "&nbsp&nbsp&nbsp*";	 
+		if(cifd[1]==5)
+			{	
+		 document.getElementById('str20').innerHTML=A5[0];		   
+		 document.getElementById('str21').innerHTML=A5[1];			 
+		 document.getElementById('str22').innerHTML=A5[2];		   		  			 
+		 document.getElementById('str23').innerHTML=A5[3];  			 
+		 document.getElementById('str24').innerHTML=A5[4];	
+		     }
+		dop6=A6[4] + "&nbsp&nbsp&nbsp*";	 
+	    if(cifd[1]==6)
+			{	
+		 document.getElementById('str20').innerHTML=A6[0];		   
+		 document.getElementById('str21').innerHTML=A6[1];			 
+		 document.getElementById('str22').innerHTML=A6[2];		   		  			 
+		 document.getElementById('str23').innerHTML=A6[3];  			 
+		 document.getElementById('str24').innerHTML=dop6;	
+		     }
+	     dop7=A7[4] + "&nbsp&nbsp&nbsp*"; 
+		 if(cifd[1]==7)
+			{	
+		 document.getElementById('str20').innerHTML=A7[0];		   
+		 document.getElementById('str21').innerHTML=A7[1];			 
+		 document.getElementById('str22').innerHTML=A7[2];		   		  			 
+		 document.getElementById('str23').innerHTML=A7[3];  			 
+		 document.getElementById('str24').innerHTML=dop7;	
+		     }
+		dop8=A8[4] + "&nbsp&nbsp&nbsp*";
+		if(cifd[1]==8)
+			{	
+		 document.getElementById('str20').innerHTML=A8[0];		   
+		 document.getElementById('str21').innerHTML=A8[1];			 
+		 document.getElementById('str22').innerHTML=A8[2];		   		  			 
+		 document.getElementById('str23').innerHTML=A8[3];  			 
+		 document.getElementById('str24').innerHTML=dop8;	
+		     }
+			 
+		dop9=A9[4] + "&nbsp&nbsp&nbsp*";
+			
+		if(cifd[1]==9)
+			{	
+		 document.getElementById('str20').innerHTML=A9[0];		   
+		 document.getElementById('str21').innerHTML=A9[1];			 
+		 document.getElementById('str22').innerHTML=A9[2];		   		  			 
+		 document.getElementById('str23').innerHTML=A9[3];  			 
+         document.getElementById('str24').innerHTML=dop9;	
+		     }
+                 
+		if(cifm[0]==0)
+			{ 
+		 document.getElementById('str30').innerHTML=A0[0];		   
+		 document.getElementById('str31').innerHTML=A0[1];			 
+		 document.getElementById('str32').innerHTML=A0[2];		   		  			 
+		 document.getElementById('str33').innerHTML=A0[3];  			 
+		 document.getElementById('str34').innerHTML=A0[4];
+		     }
+			 	 
+		if(cifm[0]==1)
+			{ 
+		 document.getElementById('str30').innerHTML=A1[0];		   
+		 document.getElementById('str31').innerHTML=A1[1];			 
+		 document.getElementById('str32').innerHTML=A1[2];		   		  			 
+		 document.getElementById('str33').innerHTML=A1[3];  			 
+		 document.getElementById('str34').innerHTML=A1[4];
+		   }
+		dop20=A0[4] + "&nbsp&nbsp&nbsp*";
+        if(cifm[1]==0)
+			{ 
+		 document.getElementById('str40').innerHTML=A0[0];		   
+		 document.getElementById('str41').innerHTML=A0[1];			 
+		 document.getElementById('str42').innerHTML=A0[2];		   		  			 
+		 document.getElementById('str43').innerHTML=A0[3];  			 
+		 document.getElementById('str44').innerHTML=dop20;
+		     }
+		dop21=A1[4] + "&nbsp&nbsp&nbsp*";
+		if(cifm[1]==1)
+			{ 
+		 document.getElementById('str40').innerHTML=A1[0];		   
+		 document.getElementById('str41').innerHTML=A1[1];			 
+		 document.getElementById('str42').innerHTML=A1[2];		   		  			 
+		 document.getElementById('str43').innerHTML=A1[3];  			 
+		 document.getElementById('str44').innerHTML=dop21;
+		     }
+		dop22=A2[4] + "&nbsp&nbsp&nbsp*";
+          if(cifm[1]==2)
+			{ 
+		 document.getElementById('str40').innerHTML=A2[0];		   
+		 document.getElementById('str41').innerHTML=A2[1];			 
+		 document.getElementById('str42').innerHTML=A2[2];		   		  			 
+		 document.getElementById('str43').innerHTML=A2[3];  			 
+		 document.getElementById('str44').innerHTML=dop22;
+		     }
+		dop23=A3[4] + "&nbsp&nbsp&nbsp*";	 
+          if(cifm[1]==3)
+			{ 
+		 document.getElementById('str40').innerHTML=A3[0];		   
+		 document.getElementById('str41').innerHTML=A3[1];			 
+		 document.getElementById('str42').innerHTML=A3[2];		   		  			 
+		 document.getElementById('str43').innerHTML=A3[3];  			 
+		 document.getElementById('str44').innerHTML=dop23;
+		     }
+		 dop24=A4[4] + "&nbsp&nbsp&nbsp*";	 
+		 if(cifm[1]==4)
+			{ 
+		 document.getElementById('str40').innerHTML=A4[0];		   
+		 document.getElementById('str41').innerHTML=A4[1];			 
+		 document.getElementById('str42').innerHTML=A4[2];		   		  			 
+		 document.getElementById('str43').innerHTML=A4[3];  			 
+		 document.getElementById('str44').innerHTML=dop24;
+		     }
+		dop25=A5[4] + "&nbsp&nbsp&nbsp*";	 
+		 if(cifm[1]==5)
+			{ 
+		 document.getElementById('str40').innerHTML=A5[0];		   
+		 document.getElementById('str41').innerHTML=A5[1];			 
+		 document.getElementById('str42').innerHTML=A5[2];		   		  			 
+		 document.getElementById('str43').innerHTML=A5[3];  			 
+		 document.getElementById('str44').innerHTML=dop25;
+		     }
+		dop26=A6[4] + "&nbsp&nbsp&nbsp*";
+		if(cifm[1]==6)
+			{ 
+		 document.getElementById('str40').innerHTML=A6[0];		   
+		 document.getElementById('str41').innerHTML=A6[1];			 
+		 document.getElementById('str42').innerHTML=A6[2];		   		  			 
+		 document.getElementById('str43').innerHTML=A6[3];  			 
+		 document.getElementById('str44').innerHTML=dop26;
+		     }
+		dop27=A7[4] + "&nbsp&nbsp&nbsp*";
+		if(cifm[1]==7)
+			{ 
+		 document.getElementById('str40').innerHTML=A7[0];		   
+		 document.getElementById('str41').innerHTML=A7[1];			 
+		 document.getElementById('str42').innerHTML=A7[2];		   		  			 
+		 document.getElementById('str43').innerHTML=A7[3];  			 
+		 document.getElementById('str44').innerHTML=dop27;
+		     }
+		dop28=A8[4] + "&nbsp&nbsp&nbsp*";
+		if(cifm[1]==8)
+			{ 
+		 document.getElementById('str40').innerHTML=A8[0];		   
+		 document.getElementById('str41').innerHTML=A8[1];			 
+		 document.getElementById('str42').innerHTML=A8[2];		   		  			 
+		 document.getElementById('str43').innerHTML=A8[3];  			 
+		 document.getElementById('str44').innerHTML=dop28;
+		     }
+		dop29=A9[4] + "&nbsp&nbsp&nbsp*";
+		if(cifm[1]==9)
+			{ 
+		 document.getElementById('str40').innerHTML=A9[0];		   
+		 document.getElementById('str41').innerHTML=A9[1];			 
+		 document.getElementById('str42').innerHTML=A9[2];		   		  			 
+		 document.getElementById('str43').innerHTML=A9[3];  			 
+		 document.getElementById('str44').innerHTML=dop29;
+		     }
+		if(age=>24)
+			{
+		 document.getElementById('str50').innerHTML=A1[0];		   
+		 document.getElementById('str51').innerHTML=A1[1];			 
+		 document.getElementById('str52').innerHTML=A1[2];		   		  			 
+		 document.getElementById('str53').innerHTML=A1[3];  			 
+		 document.getElementById('str54').innerHTML=A1[4];
+		 
+		 document.getElementById('str60').innerHTML=A9[0];		   
+		 document.getElementById('str61').innerHTML=A9[1];			 
+		 document.getElementById('str62').innerHTML=A9[2];		   		  			 
+		 document.getElementById('str63').innerHTML=A9[3];  			 
+		 document.getElementById('str64').innerHTML=A9[4];
+             }
+		if(age<24)
+			{
+		 document.getElementById('str50').innerHTML=A2[0];		   
+		 document.getElementById('str51').innerHTML=A2[1];			 
+		 document.getElementById('str52').innerHTML=A2[2];		   		  			 
+		 document.getElementById('str53').innerHTML=A2[3];  			 
+		 document.getElementById('str54').innerHTML=A2[4];
+		 
+		 document.getElementById('str60').innerHTML=A0[0];		   
+		 document.getElementById('str61').innerHTML=A0[1];			 
+		 document.getElementById('str62').innerHTML=A0[2];		   		  			 
+		 document.getElementById('str63').innerHTML=A0[3];  			 
+		 document.getElementById('str64').innerHTML=A0[4];
+             }
+		if(cifg[2]==0)
+			{ 
+		 document.getElementById('str70').innerHTML=A0[0];		   
+		 document.getElementById('str71').innerHTML=A0[1];			 
+		 document.getElementById('str72').innerHTML=A0[2];		   		  			 
+		 document.getElementById('str73').innerHTML=A0[3];  			 
+		 document.getElementById('str74').innerHTML=A0[4];
+		     }
+         if(cifg[2]==1)
+			{ 
+		 document.getElementById('str70').innerHTML=A1[0];		   
+		 document.getElementById('str71').innerHTML=A1[1];			 
+		 document.getElementById('str72').innerHTML=A1[2];		   		  			 
+		 document.getElementById('str73').innerHTML=A1[3];  			 
+		 document.getElementById('str74').innerHTML=A1[4];
+		     }
+		if(cifg[2]==2)
+			{ 
+		 document.getElementById('str70').innerHTML=A2[0];		   
+		 document.getElementById('str71').innerHTML=A2[1];			 
+		 document.getElementById('str72').innerHTML=A2[2];		   		  			 
+		 document.getElementById('str73').innerHTML=A2[3];  			 
+		 document.getElementById('str74').innerHTML=A2[4];
+		     }
+		if(cifg[2]==3)
+			{ 
+		 document.getElementById('str70').innerHTML=A3[0];		   
+		 document.getElementById('str71').innerHTML=A3[1];			 
+		 document.getElementById('str72').innerHTML=A3[2];		   		  			 
+		 document.getElementById('str73').innerHTML=A3[3];  			 
+		 document.getElementById('str74').innerHTML=A3[4];
+		     }
+         if(cifg[2]==4)
+			{ 
+		 document.getElementById('str70').innerHTML=A4[0];		   
+		 document.getElementById('str71').innerHTML=A4[1];			 
+		 document.getElementById('str72').innerHTML=A4[2];		   		  			 
+		 document.getElementById('str73').innerHTML=A4[3];  			 
+		 document.getElementById('str74').innerHTML=A4[4];
+		     }
+		if(cifg[2]==5)
+			{ 
+		 document.getElementById('str70').innerHTML=A5[0];		   
+		 document.getElementById('str71').innerHTML=A5[1];			 
+		 document.getElementById('str72').innerHTML=A5[2];		   		  			 
+		 document.getElementById('str73').innerHTML=A5[3];  			 
+		 document.getElementById('str74').innerHTML=A5[4];
+		     } 
+		if(cifg[2]==6)
+			{ 
+		 document.getElementById('str70').innerHTML=A6[0];		   
+		 document.getElementById('str71').innerHTML=A6[1];			 
+		 document.getElementById('str72').innerHTML=A6[2];		   		  			 
+		 document.getElementById('str73').innerHTML=A6[3];  			 
+		 document.getElementById('str74').innerHTML=A6[4];
+		     }
+		if(cifg[2]==7)
+			{ 
+		 document.getElementById('str70').innerHTML=A7[0];		   
+		 document.getElementById('str71').innerHTML=A7[1];			 
+		 document.getElementById('str72').innerHTML=A7[2];		   		  			 
+		 document.getElementById('str73').innerHTML=A7[3];  			 
+		 document.getElementById('str74').innerHTML=A7[4];
+		     }
+         if(cifg[2]==8)
+			{ 
+		 document.getElementById('str70').innerHTML=A8[0];		   
+		 document.getElementById('str71').innerHTML=A8[1];			 
+		 document.getElementById('str72').innerHTML=A8[2];		   		  			 
+		 document.getElementById('str73').innerHTML=A8[3];  			 
+		 document.getElementById('str74').innerHTML=A8[4];
+		     }
+		if(cifg[2]==9)
+			{ 
+		 document.getElementById('str70').innerHTML=A9[0];		   
+		 document.getElementById('str71').innerHTML=A9[1];			 
+		 document.getElementById('str72').innerHTML=A9[2];		   		  			 
+		 document.getElementById('str73').innerHTML=A9[3];  			 
+		 document.getElementById('str74').innerHTML=A9[4];
+		     }
+		if(cifg[3]==0)
+			{ 
+		 document.getElementById('str80').innerHTML=A0[0];		   
+		 document.getElementById('str81').innerHTML=A0[1];			 
+		 document.getElementById('str82').innerHTML=A0[2];		   		  			 
+		 document.getElementById('str83').innerHTML=A0[3];  			 
+		 document.getElementById('str84').innerHTML=A0[4];
+		     }	 
+		if(cifg[3]==1)
+			{ 
+		 document.getElementById('str80').innerHTML=A1[0];		   
+		 document.getElementById('str81').innerHTML=A1[1];			 
+		 document.getElementById('str82').innerHTML=A1[2];		   		  			 
+		 document.getElementById('str83').innerHTML=A1[3];  			 
+		 document.getElementById('str84').innerHTML=A1[4];
+		     }
+		if(cifg[3]==2)
+			{ 
+		 document.getElementById('str80').innerHTML=A2[0];		   
+		 document.getElementById('str81').innerHTML=A2[1];			 
+		 document.getElementById('str82').innerHTML=A2[2];		   		  			 
+		 document.getElementById('str83').innerHTML=A2[3];  			 
+		 document.getElementById('str84').innerHTML=A2[4];
+		     }
+        if(cifg[3]==3)
+			{ 
+		 document.getElementById('str80').innerHTML=A3[0];		   
+		 document.getElementById('str81').innerHTML=A3[1];			 
+		 document.getElementById('str82').innerHTML=A3[2];		   		  			 
+		 document.getElementById('str83').innerHTML=A3[3];  			 
+		 document.getElementById('str84').innerHTML=A3[4];
+		     } 			 
+		if(cifg[3]==4)
+			{ 
+		 document.getElementById('str80').innerHTML=A4[0];		   
+		 document.getElementById('str81').innerHTML=A4[1];			 
+		 document.getElementById('str82').innerHTML=A4[2];		   		  			 
+		 document.getElementById('str83').innerHTML=A4[3];  			 
+		 document.getElementById('str84').innerHTML=A4[4];
+		     } 	 
+		if(cifg[3]==5)
+			{ 
+		 document.getElementById('str80').innerHTML=A5[0];		   
+		 document.getElementById('str81').innerHTML=A5[1];			 
+		 document.getElementById('str82').innerHTML=A5[2];		   		  			 
+		 document.getElementById('str83').innerHTML=A5[3];  			 
+		 document.getElementById('str84').innerHTML=A5[4];
+		     } 
+        if(cifg[3]==6)
+			{ 
+		 document.getElementById('str80').innerHTML=A6[0];		   
+		 document.getElementById('str81').innerHTML=A6[1];			 
+		 document.getElementById('str82').innerHTML=A6[2];		   		  			 
+		 document.getElementById('str83').innerHTML=A6[3];  			 
+		 document.getElementById('str84').innerHTML=A6[4];
+		     } 
+        if(cifg[3]==7)
+			{ 
+		 document.getElementById('str80').innerHTML=A7[0];		   
+		 document.getElementById('str81').innerHTML=A7[1];			 
+		 document.getElementById('str82').innerHTML=A7[2];		   		  			 
+		 document.getElementById('str83').innerHTML=A7[3];  			 
+		 document.getElementById('str84').innerHTML=A7[4];
+		     } 
+		if(cifg[3]==8)
+			{ 
+		 document.getElementById('str80').innerHTML=A8[0];		   
+		 document.getElementById('str81').innerHTML=A8[1];			 
+		 document.getElementById('str82').innerHTML=A8[2];		   		  			 
+		 document.getElementById('str83').innerHTML=A8[3];  			 
+		 document.getElementById('str84').innerHTML=A8[4];
+		     } 
+		if(cifg[3]==9)
+			{ 
+		 document.getElementById('str80').innerHTML=A9[0];		   
+		 document.getElementById('str81').innerHTML=A9[1];			 
+		 document.getElementById('str82').innerHTML=A9[2];		   		  			 
+		 document.getElementById('str83').innerHTML=A9[3];  			 
+		 document.getElementById('str84').innerHTML=A9[4];
+		     } 
+//    alert(date1);
+			 
+ }
+</script>
+</body>
+
+</html>
+
+	
